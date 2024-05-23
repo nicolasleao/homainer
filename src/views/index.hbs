@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="welcome-text">
+        Good evening, Nicolas. <div class="wave">👋</div>
+    </div>
+
+    <div class="search-bar">
+        <i class="las la-search search-button"></i>
+        <input type="text" name="search" placeholder="Search on the web..." />
+    </div>
+
+    <div class="section-title">
+        <p>Widgets</p>
+        {{!-- <div class="action"><i class="las la-plus-circle"></i></div> --}}
+    </div>
+    <div class="widget-list">
+        <div class="widget-card">
+            <div class="title muted">Memory</div>
+            <div class="main-info"> 512 MB <span class="muted">/ 2 GB</span></div>
+            <div class="widget-progress-bar">
+                <div class="widget-progress-bar-filled" style="width: 22%"></div>
+            </div>
+        </div>
+
+        <div class="widget-card">
+            <div class="title muted">Storage</div>
+            <div class="main-info"> 112 GB <span class="muted">/ 1 TB</span></div>
+            <div class="widget-progress-bar">
+                <div class="widget-progress-bar-filled" style="width: 22%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <p>Apps</p>
+        <div class="action"><i class="las la-plus-circle" onclick="showModal('Add containerized app', 'add-container', 'add-container-modal-content')"></i></div>
+    </div>
+    <div class="app-list">
+        <div class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png" alt="App Image">
+            <h3>App Name</h3>
+        </div>
+
+        <div class="app-card">
+            <img src="https://www.techspot.com/images2/downloads/topdownload/2021/03/2021-03-22-ts3_thumbs-a00-p_256.webp" alt="App Image">
+            <h3>App Name</h3>
+        </div>
+
+        <div class="app-card">
+            <img src="https://static-00.iconduck.com/assets.00/openmediavault-icon-2048x2048-v4q84s6b.png" alt="App Image">
+            <h3>App Name</h3>
+        </div>
+    </div>
+</div>
+{{> modals/add-container }}

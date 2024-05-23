@@ -1,0 +1,19 @@
+{{!-- Create a fixed top bar containing small icons for running terminal commands and quick actions --}}
+<div class="toolbar">
+    <div class="toolbar-item">
+        <i class="las la-terminal" onclick="showModal('Terminal', 'terminal', 'terminal-modal-content')"></i>
+    </div>
+    <div class="toolbar-item">
+        <i class="las la-cog" onclick="showModal('Settings', 'settings', 'settings-modal-content')"></i>
+    </div>
+    <div class="toolbar-item">
+        <i class="las la-bell" onclick="showModal('Notifications', 'notifications', 'notifications-modal-content')"></i>
+    </div>
+    <div class="toolbar-item">
+        <i class="las la-user" onclick="showModal('Account', 'account', 'account-modal-content')"></i>
+    </div>
+</div>
+{{> modals/terminal }}
+{{> modals/settings }}
+{{> modals/notifications }}
+{{> modals/account }}
