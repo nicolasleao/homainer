@@ -23,14 +23,10 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/dbtest', (req, res) => {
-    mainDb.all(`SELECT * FROM read_csv('${config.basepath}/databases/test.csv')`, function (err, res) {
-        if (err) {
-            console.warn(err)
-            return
-        }
-        console.log(res)
-    })
+app.get('/docker-test', (req, res) => {
+    const { testService } = require('./services/docker-service')
+    testService()
+    res.send('Docker test running')
 })
 
 app.listen(config.port, () => {
