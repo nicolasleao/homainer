@@ -8,6 +8,8 @@ const app = express()
 // Set up static file serving
 app.use(express.static('public'));
 
+app.use('/scripts', express.static(__dirname + '/node_modules/'))
+
 const hbs = create({
     extname: 'hbs',
     defaultLayout: 'main',
@@ -23,10 +25,12 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/docker-test', (req, res) => {
-    const { testService } = require('./services/docker-service')
-    testService()
-    res.send('Docker test running')
+app.get('/docker-test', async (req, res) => {
+    const { listContainers } = require('./services/docker-service')
+    const containers = await listContainers()
+    res.json({
+        containers
+    })
 })
 
 app.listen(config.port, () => {

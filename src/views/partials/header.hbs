@@ -1,7 +1,7 @@
 {{!-- Create a fixed top bar containing small icons for running terminal commands and quick actions --}}
 <div class="toolbar">
     <div class="toolbar-item">
-        <i class="las la-terminal" onclick="showModal('Terminal', 'terminal', 'terminal-modal-content')"></i>
+        <i class="las la-terminal" onclick="showModal('Terminal', 'terminal-wrapper', 'terminal-modal-content');openTerminal()"></i>
     </div>
     <div class="toolbar-item">
         <i class="las la-cog" onclick="showModal('Settings', 'settings', 'settings-modal-content')"></i>
