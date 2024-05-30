@@ -31,8 +31,14 @@ const loadStatsService = () => {
         }
     }
 
+    const lastCommit = async () => {
+        const commit = await exec('git log -1 --pretty=format:"%h"')
+        return commit.stdout
+    }
+
     return {
-        memory
+        memory,
+        lastCommit
     }
 }
 

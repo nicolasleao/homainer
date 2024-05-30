@@ -11,6 +11,7 @@ const router = (config, apps, stats) => {
             showToolbar: config.get('showToolbar'),
             apps: apps.get(),
             memory: await stats.memory(),
+            cssVersion: await stats.lastCommit(),
         })
     })
     return r
