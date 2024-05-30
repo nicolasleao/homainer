@@ -13,15 +13,23 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-    background-image: url('/img/bg-min.jpg');
+    background: url('/img/bg-min.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
     color: #F2E2D2;
     font-family: "Roboto", sans-serif;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     max-width: 1024px;
     margin: 0 auto;
+    width: 100%;
     padding: 20px;
 }
 
@@ -256,7 +264,20 @@ body {
 
 @media screen and (max-width: 768px) {
     .widget-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
+    }
+
+    .widget-card .widget-body {
+        padding: 5px 10px 10px 10px;
+    }
+
+    .widget-card .main-info.bigger {
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    .widget-card .main-info.bigger .muted {
+        font-size: 14px;
     }
 }
 

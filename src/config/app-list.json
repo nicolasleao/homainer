@@ -1,5 +1,10 @@
 [
     {
+        "name": "Proxmox",
+        "icon": "https://iconduck.com/api/v2/vectors/vctrptwpy2jh/media/png/256/download",
+        "url": "https://192.168.0.250:8006"
+    },
+    {
         "name": "Dockge",
         "icon": "https://dockge.kuma.pet/icon.svg",
         "url": "http://192.168.0.202:5001"

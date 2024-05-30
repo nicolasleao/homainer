@@ -54,3 +54,15 @@ Alternatively you can run the node app manually with the commands
 ```bash
 cd src/ && npm run start:prod
 ```
+
+## Updating
+
+You can always update directly through git by running
+```bash
+git fetch && git pull
+```
+
+Depending on your server configuration, you may need to run the following command to trust the repo
+```bash
+git config --global --add safe.directory /path/to/homainer
+```
