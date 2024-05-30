@@ -3,5 +3,10 @@
         "name": "Dockge",
         "icon": "https://dockge.kuma.pet/icon.svg",
         "url": "http://192.168.0.9:5001"
+    },
+    {
+        "name": "Jellyfin",
+        "icon": "https://play-lh.googleusercontent.com/FAlWhVMAjAzI6Nxc7bf4KPgjbwA3GT9j2bzeAMnRpdWim_2SXnS9i4zhwasKWIC8PV4",
+        "url": "http://192.168.0.203:8096"
     }
 ]

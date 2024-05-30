@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@xterm/xterm": "^5.5.0",
-    "duckdb": "^0.10.2",
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
     "node-docker-api": "^1.1.22",
