@@ -14,19 +14,17 @@
     </div>
     <div class="widget-list">
         <div class="widget-card">
-            <div class="title muted">Total Memory</div>
-            <div class="main-info"> 512 MB <span class="muted">/ 2 GB</span></div>
+            <div class="title muted">Memory Usage</div>
+            <div class="main-info"> {{ memory.used }} <span class="muted">/ {{ memory.total }}</span></div>
             <div class="widget-progress-bar">
-                <div class="widget-progress-bar-filled" style="width: 22%"></div>
+                <div class="widget-progress-bar-filled" style="width: {{ memory.percentage }}%"></div>
             </div>
         </div>
 
         <div class="widget-card">
-            <div class="title muted">Storage</div>
-            <div class="main-info"> 112 GB <span class="muted">/ 1 TB</span></div>
-            <div class="widget-progress-bar">
-                <div class="widget-progress-bar-filled" style="width: 22%"></div>
-            </div>
+            <div class="title muted">Docker Containers</div>
+            
+            <div class="main-info bigger"><i class="lab la-docker"></i>&ensp;{{ containers.running }} running <span class="muted">/&ensp;{{ containers.stopped }} stopped</span></div>
         </div>
     </div>
 

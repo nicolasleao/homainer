@@ -1,21 +1,24 @@
 const { Docker } = require('node-docker-api');
 
-const docker = new Docker({ socketPath: '/var/run/docker.sock' });
+const loadDockerService = () => {
+    const docker = new Docker({ socketPath: '/var/run/docker.sock' });
 
-const listContainers = async () => {
-    const containers = await docker.container.list({ all: true }).catch(e => console.error(e))
-    
-    return containers.map(container => {
+    const countContainers = async () => {
+        const containers = await docker.container.list({ all: true }).catch(e => console.error(e))
+        const containersRunning = await docker.container.list().catch(e => console.error(e))
+
         return {
-            id: container.data.Id,
-            name: container.data.Names[0],
-            image: container.data.Image,
-            state: container.data.State,
-            status: container.data.Status
+            total: containers.length,
+            running: containersRunning.length,
+            stopped: containers.length - containersRunning.length
         }
-    })
+    }
+
+    return {
+        countContainers
+    }
 }
 
 module.exports = {
-    listContainers
+    loadDockerService
 }

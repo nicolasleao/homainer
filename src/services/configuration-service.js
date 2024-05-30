@@ -1,6 +1,6 @@
 const { readFileSync, writeFileSync } = require('fs')
 
-const loadConfig = (basepath) => {
+const loadConfigService = (basepath) => {
     const config = JSON.parse(readFileSync(`${basepath}/config/config.json`))
 
     const get = (key) => {
@@ -21,5 +21,5 @@ const loadConfig = (basepath) => {
 
 
 module.exports = {
-    loadConfig
+    loadConfigService
 }

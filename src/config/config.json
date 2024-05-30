@@ -1,4 +1,6 @@
 {
-    "welcomeMessage": "Welcome to the server!",
-    "port": 8001
+    "welcomeMessage": "Bem vindo!",
+    "searchMessage": "Buscar na internet",
+    "port": 8001,
+    "showToolbar": false
 }
