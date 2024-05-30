@@ -9,9 +9,9 @@ const router = (config, apps, stats) => {
             welcomeMessage: config.get('welcomeMessage'),
             searchMessage: config.get('searchMessage'),
             showToolbar: config.get('showToolbar'),
+            cssVersion: config.get('cssVersion'),
             apps: apps.get(),
             memory: await stats.memory(),
-            cssVersion: await stats.lastCommit(),
         })
     })
     return r

@@ -2,5 +2,6 @@
     "welcomeMessage": "Bem vindo!",
     "searchMessage": "Buscar na internet",
     "port": 7777,
-    "showToolbar": false
+    "showToolbar": false,
+    "cssVersion": "2024-05-30"
 }

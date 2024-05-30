@@ -7,10 +7,9 @@ services:
     volumes:
     - ./src/config:/homainer/config
     ports:
-      - "7777:7777"
+      - 7777:7777
     networks:
       - main
-
 networks:
   main:
     name: main
