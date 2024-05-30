@@ -1,0 +1,16 @@
+services:
+  node:
+    container_name: homainer_dashboard
+    image: "node:20-slim"
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    ports:
+      - "7777:7777"
+    networks:
+      - main
+
+networks:
+  main:
+    name: main
+    driver: bridge

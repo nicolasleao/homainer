@@ -2,7 +2,7 @@
 
 ## Beautiful lightweight server dashboard for creating managing and monitoring docker containers through a web interface.
 
-![Dashboard demo picture](demos/1-homainer-home-demo.png)
+![Dashboard demo picture](demos/2-homainer-home-demo.png)
 
 ## Configuration
 
@@ -30,13 +30,27 @@ The showToolbar feature is currently a WIP and shouldn't be enabled.
 {
     "welcomeMessage": "Bem vindo!",
     "searchMessage": "Buscar na internet",
-    "port": 8001,
+    "port": 7777,
     "showToolbar": false
 }
 ```
 
-## Running
+## Installing / Running
+Clone this repo and enter the directory with the commands:
+```bash
+git clone https://github.com/nicolasleao/homainer.git
+```
+```bash
+cd homainer
+```
 
-To start the server as a daemon, we need to go to the `/src/` directory and run `npm start &`.
+This application comes with a `docker-compose.yml` file, so you can simply run:
+```bash
+docker-compose build && docker-compose up -d
+```
+to start it inside a minimal node container.
 
-I'm working on containerizing this server so it'll be easier to install and be able to fit in your current docker setup.
+Alternatively you can run the node app manually with the commands
+```bash
+cd src/ && npm run start:prod
+```
