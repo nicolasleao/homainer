@@ -1,7 +1,6 @@
 services:
-  node:
+  dashboard:
     container_name: homainer_dashboard
-    image: "node:20-slim"
     build:
       context: ./src
       dockerfile: Dockerfile
