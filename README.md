@@ -46,7 +46,7 @@ cd homainer
 
 This application comes with a `docker-compose.yml` file, so you can simply run:
 ```bash
-docker-compose build && docker-compose up -d
+docker compose build && docker compose up -d
 ```
 to start it inside a minimal node container.
 
