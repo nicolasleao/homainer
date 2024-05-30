@@ -4,6 +4,8 @@ services:
     build:
       context: ./src
       dockerfile: Dockerfile
+    volumes:
+    - ./src/config:/homainer/config
     ports:
       - "7777:7777"
     networks:
