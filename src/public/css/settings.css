@@ -1,0 +1,74 @@
+.settings-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-menu .title {
+}
+
+.settings-menu label {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.settings-menu input, textarea {
+    width: 100%;
+    border: none;
+    padding: 0 10px;
+    border-radius: 8px;
+    background-color: #9FB7B944;
+    height: 48px;
+}
+
+.editable-app {
+    padding: 20px 20px;
+    border-radius: 8px;
+    background-color: #9FB7B944;
+}
+
+.settings-menu button {
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #222;
+    background-color: #94aea499;
+    margin-left: calc(50% - 50px);
+    width: 100px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.settings-menu button:hover {
+    background-color: #94aea4;
+}
+
+.editable-app .editable-values {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.editable-app .editable-values .info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+.editable-app .editable-values img {
+    width: 15%;
+}
+
+.editable-app .remove-app {
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: #fa4e3a;
+    border-radius: 8px;
+    width: 30px;
+    padding-left: 3px;
+    cursor: pointer;
+    float: right;
+}

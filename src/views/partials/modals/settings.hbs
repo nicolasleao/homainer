@@ -1,3 +1,27 @@
 <div id="settings-modal-content" style="display: none">
-    This is the settings modal content
+
+    <div class="settings-menu">
+        <label for="welcomeMessage">Welcome message</label>
+        <input type="text" name="welcomeMessage" placeholder="Welcome to the server" value="{{ welcomeMessage }}" />
+
+        <label for="welcomeMessage">App List</label>
+        {{#each apps}}
+            <div class="editable-app">
+                <div class="remove-app" onclick="confirm('Are you sure you want to remove {{this.name}}?')"><i class="las la-trash-alt"></i></div>
+                <div class="editable-values">
+                    <img src="{{ this.icon }}" alt="App Image">
+                    <div class="info">
+                        <label for="appName">name</label>
+                        <input type="text" name="appName" value="{{ this.name }}" />
+                        <label for="appUrl">URL</label>
+                        <input type="text" name="appUrl" value="{{ this.url }}" />
+                        <label for="appIcon">Icon URL</label>
+                        <input type="text" name="appIcon" value="{{ this.icon }}" />
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+
+        <button>Save</button>
+    </div>
 </div>
