@@ -111,6 +111,7 @@ body {
 }
 
 .app-card {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,6 +122,8 @@ body {
     backdrop-filter: blur(6px);
     padding: 8px;
     transition: transform 0.2s;
+    color: #F2E2D2;
+    text-decoration: none;
 }
 
 .app-card:hover {
@@ -144,6 +147,22 @@ body {
 .app-card p {
     font-size: 14px;
     color: #F2E2D2;
+}
+
+.app-card .app-status {
+    position: absolute;
+    top: -7px;
+    right: -5px;
+    padding: 0 5px;
+    border-radius: 15px;
+}
+
+.app-card .app-status.running {
+    background-color: #45ae39;
+}
+
+.app-card .app-status.exited {
+    background-color: #fa4e3a;
 }
 
 .widget-list {

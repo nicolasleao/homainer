@@ -1,7 +1,8 @@
 const express = require('express')
 const { create } = require('express-handlebars')
-const config = require('./config')
-const { main: mainDb } = require('./databases')
+const { getConfig } = require('./services/configuration-service')
+const { loadApps } = require('./services/apps-service')
+const { getApps, addApp, removeApp } = loadApps(__dirname);
 
 const app = express()
 
@@ -16,23 +17,18 @@ const hbs = create({
     layoutsDir: __dirname + '/views/layouts',
     partialsDir: __dirname + '/views/partials'
 })
+
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+    const apps = getApps()
     res.render('index', {
         title: 'HomeLab Dashboard',
+        apps,
     })
 })
 
-app.get('/docker-test', async (req, res) => {
-    const { listContainers } = require('./services/docker-service')
-    const containers = await listContainers()
-    res.json({
-        containers
-    })
-})
-
-app.listen(config.port, () => {
-    console.log(`Server is running on http://localhost:${config.port}`)
+app.listen(getConfig('port'), () => {
+    console.log(`Server is running on http://localhost:${getConfig('port')}`)
 })

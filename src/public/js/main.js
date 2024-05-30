@@ -1,4 +1,28 @@
-let term;
+let term
+
+// Wait for the DOM to be loaded
+document.addEventListener("DOMContentLoaded", function (event) {
+    initializeSearchFunctionality()
+    
+    // ping our apps to see if they are running
+    pingAllApps()
+    setInterval(() => {
+        pingAllApps()
+    }, 30000)
+})
+
+const pingAllApps = () => {
+    document.querySelectorAll('.app-card').forEach(async (app) => {
+        const running = await ping(app.id)
+        if (running) {
+            app.querySelector('.app-status')?.classList?.add('running')
+            app.querySelector('.app-status')?.classList?.remove('exited')
+        } else {
+            app.querySelector('.app-status')?.classList?.remove('running')
+            app.querySelector('.app-status')?.classList?.add('exited')
+        }
+    })
+}
 
 const initializeSearchFunctionality = () => {
     const searchInput = document.querySelector('.search-bar input')
@@ -22,19 +46,14 @@ const initializeSearchFunctionality = () => {
     }
 }
 
-// Wait for the DOM to be loaded
-document.addEventListener("DOMContentLoaded", function (event) {
-    initializeSearchFunctionality()
-});
-
 const openTerminal = () => {
     const modalContent = document.querySelector('.modal-content')
     const terminalElement = document.createElement('div')
     terminalElement.id = 'terminal'
     modalContent.appendChild(terminalElement)
 
-    term = new Terminal();
-    term.open(document.getElementById('terminal'));
+    term = new Terminal()
+    term.open(document.getElementById('terminal'))
     term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
 }
 
@@ -75,8 +94,8 @@ const showModal = (title, modalWrapperId, modalContentId) => {
     })
 
     modal.addEventListener("click", (e) => {
-        e.stopPropagation();
-        e.preventDefault();
+        e.stopPropagation()
+        e.preventDefault()
     })
     return modal
 }
@@ -89,4 +108,19 @@ const hideModal = (modalWrapperId) => {
     if (wrapper) wrapper.classList.remove('visible')
     if (modal) modal.classList.remove('visible')
     setTimeout(() => { wrapper.remove(); closeTerminal() }, 200)
+}
+
+const ping = async (url) => {
+    try {
+        const response = await fetch(url, {
+            method: "GET",
+            mode: "no-cors",
+            cache: "no-cache",
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+        })
+        return response.status < 400
+    } catch (e) {
+        return false
+    }
 }

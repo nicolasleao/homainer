@@ -32,23 +32,15 @@
 
     <div class="section-title">
         <p>Apps</p>
-        <div class="action"><i class="las la-plus-circle" onclick="showModal('Add containerized app', 'add-container', 'add-container-modal-content')"></i></div>
     </div>
     <div class="app-list">
-        <div class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png" alt="App Image">
-            <h3>App Name</h3>
-        </div>
-
-        <div class="app-card">
-            <img src="https://www.techspot.com/images2/downloads/topdownload/2021/03/2021-03-22-ts3_thumbs-a00-p_256.webp" alt="App Image">
-            <h3>App Name</h3>
-        </div>
-
-        <div class="app-card">
-            <img src="https://static-00.iconduck.com/assets.00/openmediavault-icon-2048x2048-v4q84s6b.png" alt="App Image">
-            <h3>App Name</h3>
-        </div>
+        {{#each apps}}
+            <a href="{{ this.url }}" target="_blank" class="app-card" id="{{this.url}}">
+                <span class="app-status exited">&ensp;</span>
+                <img src="{{ this.icon }}" alt="App Image">
+                <h3>{{ this.name }}</h3>
+            </a>
+        {{/each}}
     </div>
 </div>
 {{> modals/add-container }}
