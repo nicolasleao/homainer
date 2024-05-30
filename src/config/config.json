@@ -1,6 +1,6 @@
 {
     "welcomeMessage": "Bem vindo!",
     "searchMessage": "Buscar na internet",
-    "port": 8001,
+    "port": 7777,
     "showToolbar": false
 }

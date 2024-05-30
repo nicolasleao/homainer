@@ -3,13 +3,35 @@ let term
 // Wait for the DOM to be loaded
 document.addEventListener("DOMContentLoaded", function (event) {
     initializeSearchFunctionality()
-    
-    // ping our apps to see if they are running
+
+    // ping our apps to see if they are running and update clock every 30sec
     pingAllApps()
+    updateCurrentTimeandDate()
     setInterval(() => {
         pingAllApps()
+        updateCurrentTimeandDate()
     }, 30000)
 })
+
+function updateCurrentTimeandDate() {
+    const currentTime = document.getElementById('current-time');
+    const d = new Date();
+    const m = d.getMinutes();
+    const h = d.getHours();
+    currentTime.textContent =
+        (`0${h}`).substr(-2) + ":" + (`0${m}`).substr(-2);
+
+    const currentDate = document.getElementById('current-date');
+    const day = d.getDate();
+    const month = d.getMonth() + 1;
+    const year = d.getFullYear();
+    const dayOfWeek = d.getDay();
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    currentDate.textContent =
+        (`0${day}`).substr(-2) + "/" + (`0${month}`).substr(-2) + "/" + year;
+    const currentDay = document.getElementById('current-day');
+    currentDay.textContent = days[dayOfWeek];
+}
 
 const pingAllApps = () => {
     document.querySelectorAll('.app-card').forEach(async (app) => {

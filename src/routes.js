@@ -1,7 +1,7 @@
 const { Router } = require('express')
 
 
-const router = (config, apps, stats, docker) => {
+const router = (config, apps, stats) => {
     const r = Router()
     r.get('/', async (req, res) => {
         res.render('index', {
@@ -11,7 +11,6 @@ const router = (config, apps, stats, docker) => {
             showToolbar: config.get('showToolbar'),
             apps: apps.get(),
             memory: await stats.memory(),
-            containers: await docker.countContainers()
         })
     })
     return r

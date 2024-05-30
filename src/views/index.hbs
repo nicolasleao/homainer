@@ -15,16 +15,17 @@
     <div class="widget-list">
         <div class="widget-card">
             <div class="title muted">Memory Usage</div>
-            <div class="main-info"> {{ memory.used }} <span class="muted">/ {{ memory.total }}</span></div>
+            <div class="main-info"> {{ memory.used }} &ensp;<span class="muted"> / {{ memory.total }}</span></div>
             <div class="widget-progress-bar">
                 <div class="widget-progress-bar-filled" style="width: {{ memory.percentage }}%"></div>
             </div>
         </div>
 
         <div class="widget-card">
-            <div class="title muted">Docker Containers</div>
+            <div class="title muted">Date / Time</div>
             
-            <div class="main-info bigger"><i class="lab la-docker"></i>&ensp;{{ containers.running }} running <span class="muted">/&ensp;{{ containers.stopped }} stopped</span></div>
+            <div class="main-info bigger"><i class="las la-clock"></i>&ensp;<span id="current-time"></span>&ensp;|&ensp;<span class="muted" id="current-date"></span></div>
+            <span id="current-day" class="muted"></span>
         </div>
     </div>
 

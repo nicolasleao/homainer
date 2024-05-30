@@ -193,17 +193,26 @@ body {
 }
 
 .widget-card .main-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 18px;
     font-weight: bold;
     padding: 40px 0 0 0;
 }
 
 .widget-card .main-info.bigger {
-    font-size: 24px;
+    padding: 10px 0 0 0;
+    font-size: 44px;
 }
 
 .widget-card .main-info .muted {
     font-size: 14px;
+    font-weight: bold;
+}
+
+.widget-card .main-info.bigger .muted {
+    font-size: 24px;
     font-weight: bold;
 }
 
