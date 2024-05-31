@@ -1,6 +1,6 @@
 # Homainer
 
-## Beautiful lightweight server dashboard for creating managing and monitoring docker containers through a web interface.
+## Beautiful lightweight server dashboard for listing and accessing your self-hosted services.
 
 ![Dashboard demo picture](demos/2-homainer-home-demo.png)
 
